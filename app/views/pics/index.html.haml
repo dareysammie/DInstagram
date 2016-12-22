@@ -1,4 +1,7 @@
 - @pics.each do |pic|
 	%p= link_to pic.title, pic
+	%p= pic.user.email
+	
+%br
     
 = link_to "New Pic", new_pic_path
