@@ -1,8 +1,8 @@
 class PicsController < ApplicationController
-	before_action :find_pic, only: [:show, :edit, :update, :destroy]
+	before_action :find_pic, only: [:show, :edit, :update, :destroy ]
 
 	def index
-		@pics= Pic.all
+		@pics= Pic.all.order("created_at DESC")
 	end
 	
 
@@ -16,10 +16,28 @@ class PicsController < ApplicationController
 	def create
 		@pic=Pic.new(pic_params)
 		if @pic.save
-			redirect_to @pic
+			redirect_to root_path
 		else
 			render 'new'
 		end
+	end
+	def edit
+
+	end
+
+	def destroy
+     @pic.destroy
+     redirect_to root_path
+	end
+
+	def update
+		if @pic.update(pic_params)
+			redirect_to root_path
+		else
+			render 'edit'
+		end
+
+
 	end
 
 	private
