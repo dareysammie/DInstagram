@@ -42,7 +42,7 @@ class PicsController < ApplicationController
 
 	private
 	def pic_params
-     params.require(:pic).permit(:title)
+     params.require(:pic).permit(:title, :image)
 	end
 
 	def find_pic
