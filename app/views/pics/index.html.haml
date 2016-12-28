@@ -1,7 +1,11 @@
-- @pics.each do |pic|
-	= link_to (image_tag pic.image.url(:medium)), pic
-	%p= pic.title
-	%p= pic.user.email
+.col-md-6.col-md-offset-3
+	#pics.transitions-enabled.centered
+		- @pics.each do |pic|
+			.box.panel.panel-default
+				%p= pic.user.email
+				= link_to (image_tag pic.image.url(:medium)), pic
+				%p= pic.title
+				
 	
-%br
+			
     
