@@ -1,0 +1,11 @@
+.comment
+
+	- @comments.each do |comment|
+		= comment.content 
+		- if current_user.id == comment.user.id
+			= link_to [comment.pic,comment], method: :delete do
+				%span.glyphicon.glyphicon-remove
+		%br
+		%small= comment.user.email
+		%br
+	= render 'comments/form'

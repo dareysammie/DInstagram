@@ -4,10 +4,12 @@ class PicsController < ApplicationController
 
 	def index
 		@pics= Pic.all.order("created_at DESC")
+
 	end
 	
 
 	def show
+		@comments = Comment.where(pic_id: @pic).order("created_at DESC")
 		
 
 	end
