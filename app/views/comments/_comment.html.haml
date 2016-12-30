@@ -6,6 +6,6 @@
 			= link_to [comment.pic,comment], method: :delete do
 				%span.glyphicon.glyphicon-remove
 		%br
-		%small= comment.user.email
+		%small= comment.user.username
 		%br
 	= render 'comments/form'

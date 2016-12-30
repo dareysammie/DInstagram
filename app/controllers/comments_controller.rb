@@ -9,8 +9,7 @@ class CommentsController < ApplicationController
 
 		if @comment.save
 			redirect_to pic_path(@pic)
-		else
-			render 'new'
+		
 		end
 	end
 	def destroy

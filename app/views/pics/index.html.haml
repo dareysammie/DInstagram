@@ -2,7 +2,7 @@
 	#pics.transitions-enabled.centered
 		- @pics.each do |pic|
 			.panel.panel-default
-				%p= pic.user.email
+				%p= pic.user.username
 				= link_to (image_tag pic.image.url), pic
 				%p= pic.title
 				
